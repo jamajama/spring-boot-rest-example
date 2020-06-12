@@ -8,6 +8,10 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  
+variables: 
+  ## Add this under variables section in the pipeline
+  appName: 'java-springboot-app'
 
 steps:
 - task: Maven@3
@@ -21,3 +25,4 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     appName: 'java-springboot-app'
+    appType: webAppLinux
